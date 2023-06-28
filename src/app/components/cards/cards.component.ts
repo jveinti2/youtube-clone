@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VideosService } from 'src/app/services/videos.service';
+import { ServicioVideosPendientesService } from 'src/app/services/servicio-videos-pendientes.service';
 
 @Component({
   selector: 'app-cards',
@@ -9,7 +10,10 @@ import { VideosService } from 'src/app/services/videos.service';
 export class CardsComponent implements OnInit {
   videos: any[] = [];
 
-  constructor(private videosService: VideosService) {}
+  constructor(
+    private videosService: VideosService,
+    private servicioVideosPendientesService: ServicioVideosPendientesService
+  ) {}
 
   ngOnInit(): void {
     this.getVideos();
@@ -20,15 +24,19 @@ export class CardsComponent implements OnInit {
       (data: any) => {
         data.videos.forEach((video: any) => {
           this.videos.push({
+            id: video.id,
             image: video.image,
             src: video.video_files[0].link,
           });
         });
-        console.log(this.videos);
       },
       (error) => {
         console.error(error);
       }
     );
+  }
+
+  addPending(video: any) {
+    this.servicioVideosPendientesService.disparadorDeFavoritos.emit(video);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioVideosPendientesService } from '../../services/servicio-videos-pendientes.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor() {}
+  videosPendientes: any[] = [];
+
+  constructor(
+    private servicioVideosPendientesService: ServicioVideosPendientesService
+  ) {}
 
   isOpen = false;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.servicioVideosPendientesService.disparadorDeFavoritos.subscribe(
+      (data) => {
+        console.log('Recibiendo data', data);
+        this.videosPendientes.push(data);
+      }
+    );
+  }
 }

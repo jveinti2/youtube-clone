@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { VideosService } from './services/videos.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +8,7 @@ import { VideosService } from './services/videos.service';
 export class AppComponent {
   title = 'youtube-clone';
   videos: any[] = [];
-  constructor(private videosService: VideosService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.videos.push(this.videosService.getVideos());
-  }
+  ngOnInit(): void {}
 }
