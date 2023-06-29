@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioVideosPendientesService } from '../../services/servicio-videos-pendientes.service';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-navbar',
@@ -21,6 +22,15 @@ export class NavbarComponent implements OnInit {
         console.log('Recibiendo data', data);
         this.videosPendientes.push(data);
       }
+    );
+  }
+
+  drop($event: CdkDragDrop<any[]>) {
+    console.log($event);
+    moveItemInArray(
+      this.videosPendientes,
+      $event.previousIndex,
+      $event.currentIndex
     );
   }
 }

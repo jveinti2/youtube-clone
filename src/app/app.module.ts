@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,8 +11,20 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, CardsComponent, SidebarComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule, OverlayModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    CardsComponent,
+    SidebarComponent,
+    HomeComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    OverlayModule,
+    HttpClientModule,
+    DragDropModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

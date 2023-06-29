@@ -90,10 +90,13 @@
           >
             <div class="bg-white rounded-lg shadow w-44 dark:bg-gray-700">
               <ul
+                cdkDropList
+                (cdkDropListDropped)="drop($event)"
                 class="py-2 text-sm text-gray-700 dark:text-gray-200"
                 aria-labelledby="dropdownDefaultButton"
               >
                 <li
+                  cdkDrag
                   class="flex h-10 my-2"
                   *ngFor="let videoPendiente of videosPendientes"
                 >
