@@ -19,7 +19,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.servicioVideosPendientesService.disparadorDeFavoritos.subscribe(
       (data) => {
-        console.log('Recibiendo data', data);
         this.videosPendientes.push(data);
       }
     );

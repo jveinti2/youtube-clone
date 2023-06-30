@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { ReproductorComponent } from './pages/reproductor/reproductor.component';
 
 const routes: Routes = [
   {
@@ -8,9 +9,13 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: '**',
+    path: '',
     redirectTo: 'home',
     pathMatch: 'full',
+  },
+  {
+    path: 'reproductor/:url',
+    component: ReproductorComponent,
   },
 ];
 
