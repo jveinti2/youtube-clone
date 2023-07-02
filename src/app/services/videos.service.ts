@@ -6,14 +6,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class VideosService {
   API_KEY = 'jDiBbcsBbCut1d3nQR6Wx0mdUXNBUVEZFEsKcLSULDBAnDfKDA0XZcuq';
-  API_URL = 'https://api.pexels.com/videos/search?query=nature&per_page=10';
+  API_URL = `https://api.pexels.com/videos/search`;
 
-  constructor(private http: HttpClient) {
-    this.getVideos();
-  }
+  constructor(private http: HttpClient) {}
 
-  getVideos() {
-    return this.http.get(this.API_URL, {
+  getVideos(search: string = 'nature') {
+    console.log('Desde servicio videos ->', search);
+    const URL = `${this.API_URL}?query=${search}&per_page=10`;
+    return this.http.get(URL, {
       headers: {
         Authorization: this.API_KEY,
       },

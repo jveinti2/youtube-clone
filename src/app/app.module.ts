@@ -10,6 +10,7 @@ import { CardsComponent } from './components/cards/cards.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ReproductorComponent } from './pages/reproductor/reproductor.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ReproductorComponent } from './pages/reproductor/reproductor.component'
     OverlayModule,
     HttpClientModule,
     DragDropModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
