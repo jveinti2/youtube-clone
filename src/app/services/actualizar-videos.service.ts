@@ -11,7 +11,6 @@ export class ActualizarVideosService {
   actualizarVideos$ = this.actualizarVideos.asObservable();
 
   notificarActualizarVideos(search: string) {
-    console.log('Desde servicio ->', search);
     this.actualizarVideos.next(search);
   }
 }
