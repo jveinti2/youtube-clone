@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicioVideosPendientesService } from '../../services/servicio-videos-pendientes.service';
+import { ServicioVideosPendientesService } from '../../core/services/servicio-videos-pendientes.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { ActualizarVideosService } from '../../services/actualizar-videos.service';
+import { ActualizarVideosService } from '../../core/services/actualizar-videos.service';
+import { SharingService } from '../../core/services/sharing.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -13,7 +14,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private servicioVideosPendientesService: ServicioVideosPendientesService,
-    private actualizarVideosService: ActualizarVideosService
+    private actualizarVideosService: ActualizarVideosService,
+    private sharingService: SharingService
   ) {}
 
   isOpen = false;
@@ -36,7 +38,6 @@ export class NavbarComponent implements OnInit {
   }
 
   getVideos() {
-    console.log('Desde navbar ->', this.search);
-    this.actualizarVideosService.notificarActualizarVideos(this.search);
+    this.sharingService.SharingObservableData = this.search;
   }
 }

@@ -11,6 +11,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ReproductorComponent } from './pages/reproductor/reproductor.component';
 import { FormsModule } from '@angular/forms';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     DragDropModule,
     FormsModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
