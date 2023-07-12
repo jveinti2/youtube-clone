@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioVideosPendientesService } from '../../core/services/servicio-videos-pendientes.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { ActualizarVideosService } from '../../core/services/actualizar-videos.service';
+// import { ActualizarVideosService } from '../../core/services/actualizar-videos.service';
 import { SharingService } from '../../core/services/sharing.service';
 @Component({
   selector: 'app-navbar',
@@ -11,10 +11,14 @@ import { SharingService } from '../../core/services/sharing.service';
 export class NavbarComponent implements OnInit {
   videosPendientes: any[] = [];
   search: any = '';
-
+  user= {
+    status: true,
+    nombre:  ''
+  }
+  
   constructor(
     private servicioVideosPendientesService: ServicioVideosPendientesService,
-    private actualizarVideosService: ActualizarVideosService,
+    // private actualizarVideosService: ActualizarVideosService,
     private sharingService: SharingService
   ) {}
 

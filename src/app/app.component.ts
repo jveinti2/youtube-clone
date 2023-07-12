@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'youtube-clone';
   videos: any[] = [];
-  constructor() {}
-
-  ngOnInit(): void {}
+  path = '';
+  constructor(private location: Location) {}
+  ngOnInit(): void {
+    this.path = this.location.path();
+  }
 }
