@@ -12,6 +12,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ReproductorComponent } from './pages/reproductor/reproductor.component';
 import { FormsModule } from '@angular/forms';
 import { CoreModule } from './core/core.module';
+import { LoginComponent } from './pages/login/login.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { CoreModule } from './core/core.module';
     SidebarComponent,
     HomeComponent,
     ReproductorComponent,
+    LoginComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
